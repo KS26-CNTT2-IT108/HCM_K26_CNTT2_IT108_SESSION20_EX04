@@ -1,0 +1,35 @@
+SESSION20
+Bài 4 : Rủi ro đánh cắp mật khẩu từ trình duyệt
+
+Tên lớp: HCM K26 CNTT2
+Môn học: Nhập môn công nghệ thông tin
+Họ và tên: LƯƠNG THANH THƯ
+
+Câu 1: Lập bảng so sánh.
+Tiêu chí 1: Khả năng chống Infostealer
+	Chrome: Yếu.
+	Mật khẩu nằm trong tệp Login Data, không có Master Password chặn lại.
+	Infostealer chạy cùng quyền người dùng nên đọc và giải mã được trong vài giây.
+	Bitwarden: Mạnh hơn.
+	Két mã hóa AES-256, khi khóa chỉ còn dữ liệu mã hóa.
+	Cần Master Password (và 2FA) mới mở được.
+
+Tiêu chí 2: Zero-Knowledge Architecture
+	Chrome: Không rõ ràng.
+	Đồng bộ qua tài khoản Google, mặc định Google có thể giữ khóa giải mã.
+	Bitwarden: Có.
+	Mã hóa và giải mã ngay trên máy người dùng.
+	Máy chủ chỉ lưu dữ liệu đã mã hóa, bị hack cũng không đọc được két.
+
+Tiêu chí 3: Đồng bộ chéo nền tảng
+	Chrome: Tốt trong hệ sinh thái Chrome, hạn chế với trình duyệt và ứng dụng khác.
+	Bitwarden: Tốt.
+	Có tiện ích trình duyệt (Chrome, Firefox, Edge, Safari).
+	Có ứng dụng Windows, macOS, Linux, Android, iOS.
+
+Câu 2: Vì sao Bitwarden thắng về bảo mật dù tốn thêm thao tác Master Password
+Chặn đúng điểm yếu Infostealer khai thác: Chrome lưu sẵn để mã độc lấy ngay, Bitwarden khóa két bằng Master Password mà mã độc không có.
+Hậu quả khác nhau lớn: Với Chrome, một lần nhiễm có thể lộ cùng lúc GitHub, AWS, Stripe. Với Bitwarden, két đã khóa thì gần như không lấy được gì.
+Zero-Knowledge: Máy chủ bị tấn công, hacker chỉ thấy dữ liệu mã hóa vô nghĩa.
+Chống phishing và domino: Auto-fill so khớp chính xác tên miền, Generator tạo mật khẩu ngẫu nhiên riêng cho từng tài khoản.
+Chi phí đáng giá: Nhập Master Password chỉ mất vài giây, còn thiệt hại khi lộ tài khoản là mất dữ liệu, tiền và uy tín công ty.
